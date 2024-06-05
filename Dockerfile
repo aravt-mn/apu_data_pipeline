@@ -15,7 +15,7 @@ RUN unzip instantclient-basic-linux.x64-23.4.0.24.05.zip
 
 # Move and configure Oracle Instant Client
 RUN mkdir -p /usr/lib/oracle && mv instantclient_23_4 /usr/lib/oracle/23.4/client64
-RUN ln -s /usr/lib/oracle/23.4/client64/libclntsh.so.23.1 /usr/lib/libclntsh.so
+RUN ln -s /usr/lib/oracle/23.4/client64/libclntsh.so /usr/lib/libclntsh.so
 
 # Install Python dependencies
 RUN pip install mage-ai botocore boto3 pymssql cx_Oracle
