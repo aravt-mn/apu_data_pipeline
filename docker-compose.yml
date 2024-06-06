@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   mage_ai:
-    image: python:3.9-slim
+    image: mageai/mageai:latest
     container_name: mage_ai_container
     ports:
       - "6789:6789"
@@ -10,12 +10,7 @@ services:
       - AZURE_STORAGE_ACCOUNT_NAME=your_account_name
       - AZURE_STORAGE_ACCOUNT_KEY=your_account_key
     volumes:
-      - .:/app
-    working_dir: /app
+      - ./data:/app/data
+      - ./utils:/app/utils
+      - ./mage:/home/src/mage
     command: ["mage", "start", "apu_data_pipeline"]
-    build:
-      context: .
-      dockerfile: Dockerfile
-
-volumes:
-  mage_ai_data:
