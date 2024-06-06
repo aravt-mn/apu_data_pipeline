@@ -20,6 +20,9 @@ RUN ln -s /usr/lib/oracle/23.4/client64/libclntsh.so /usr/lib/libclntsh.so
 # Install Python dependencies
 RUN pip install mage-ai botocore boto3 pymssql cx_Oracle
 
+# Install Mage AI Integrations
+RUN pip install mage-ai[bigquery,redshift,snowflake,mssql,oracle,postgres]
+
 # Copy the current directory contents into the container at /app
 COPY . /app
 
