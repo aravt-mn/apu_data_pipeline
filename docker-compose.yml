@@ -16,5 +16,5 @@ services:
     build: .
     volumes:
       - .:/app
-    command: ["python", "your_script.py"]
+    command: ["python", "main.py"]
     restart: always
