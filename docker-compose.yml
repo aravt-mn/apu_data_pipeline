@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  mageai:
+    image: mageai/mageai:latest
+    ports:
+      - "6789:6789"
+    volumes:
+      - ./mage_data:/app/data
+      - ./apu_data_pipeline:/home/src/apu_data_pipeline
+    environment:
+      - USER_CODE_PATH=/home/src/apu_data_pipeline
+    command: ["mage", "start", "apu_data_pipeline"]
+    restart: always
+
+  apu_data_pipeline:
+    build: .
+    volumes:
+      - .:/app
+    command: ["python", "your_script.py"]
+    restart: always
