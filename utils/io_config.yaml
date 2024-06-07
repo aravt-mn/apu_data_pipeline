@@ -1,9 +1,0 @@
-sources:
-  - name: mssql_dwh_test_landingdb
-    type: mssql
-    config:
-      host: 172.31.0.112
-      user: sa-dwh
-      password: KxGQ35Wq0e*@
-      database: LandingDb
-      port: 1433
