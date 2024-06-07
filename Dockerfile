@@ -17,4 +17,4 @@ COPY . /app
 ENV PYTHONUNBUFFERED=1
 
 # Run the application
-CMD ["python", "main.py"]
+CMD ["mage", "start", "apu_data_pipeline"]
