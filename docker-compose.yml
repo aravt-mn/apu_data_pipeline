@@ -6,7 +6,7 @@ services:
       - "6789:6789"
     volumes:
       - ./mage_data:/app/data
-      - ./apu_data_pipeline:/home/src/apu_data_pipeline
+      - ./:/home/src/apu_data_pipeline
     environment:
       - USER_CODE_PATH=/home/src/apu_data_pipeline
     command: ["mage", "start", "apu_data_pipeline"]
@@ -16,5 +16,5 @@ services:
     build: .
     volumes:
       - .:/app
-    command: ["python", "main.py"]
+    command: ["mage", "start", "apu_data_pipeline"]
     restart: always
