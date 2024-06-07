@@ -2,3 +2,5 @@ numpy
 pandas
 requests
 mage-ai
+botocore
+boto3
