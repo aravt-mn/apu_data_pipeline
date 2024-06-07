@@ -17,4 +17,4 @@ COPY . /app
 ENV PYTHONUNBUFFERED=1
 
 # Run the application
-CMD ["python", "your_script.py"]
+CMD ["python", "main.py"]
