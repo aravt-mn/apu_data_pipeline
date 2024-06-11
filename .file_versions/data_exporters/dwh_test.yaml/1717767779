@@ -3,7 +3,7 @@ config:
   host: 172.31.0.112
   port: "1433"
   username: sa-dwh
-  password: 40v4A&WuP6$5
+  password: password
   authentication: null
-  schema: Python
+  schema: null
 destination: mssql

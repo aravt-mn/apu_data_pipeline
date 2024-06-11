@@ -2,8 +2,8 @@ config:
   database: LandingDb
   host: 172.31.0.112
   port: "1433"
-  username: sa-dwh
-  password: 40v4A&WuP6$5
+  username: sa-dw
+  password: password
   authentication: null
-  schema: Python
-destination: mssql
+  schema: null
+source: mssql

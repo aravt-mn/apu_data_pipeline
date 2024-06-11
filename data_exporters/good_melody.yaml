@@ -1,5 +1,5 @@
 config:
-  database: LandingDb
+  database: TestDB
   host: 172.31.0.112
   port: "1433"
   username: sa-dwh

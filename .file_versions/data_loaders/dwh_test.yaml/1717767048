@@ -6,4 +6,4 @@ config:
   password: 40v4A&WuP6$5
   authentication: null
   schema: Python
-destination: mssql
+source: mssql

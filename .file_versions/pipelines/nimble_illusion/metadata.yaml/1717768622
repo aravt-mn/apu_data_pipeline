@@ -1,0 +1,757 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - graceful_bard
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: yaml
+  name: shy pine
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: shy_pine
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: yaml
+  name: graceful bard
+  retry_config: null
+  status: updated
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - shy_pine
+  uuid: graceful_bard
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-06-07 13:55:30.274600+00:00'
+data_integration:
+  catalog:
+    streams:
+    - auto_add_new_fields: false
+      destination_table: BI_HREMPLOYEE
+      key_properties: []
+      metadata:
+      - breadcrumb: []
+        metadata:
+          forced-replication-method: FULL_TABLE
+          inclusion: available
+          schema-name: BI_HREMPLOYEE
+          selected: true
+          table-key-properties: []
+          valid-replication-keys: []
+      - breadcrumb:
+        - properties
+        - ADDR1
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - ADDR2
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - AGE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - BIRTHDATE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - BIRTHPLACE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - BLACKLISTEDDATE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - BLACKLISTREASON
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - BLOODGROUP
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - CODE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - COMPANYID
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - COMPANYNAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - COMPANYYEAR
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - CONTACTNAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - CONTACTNAME2
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - CONTACTPHONE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - CONTACTPHONE2
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - COUNTRYYEAR
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - DEPID
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - DNAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - EMAIL
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - EMAIL2
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - EMDNO
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - EMPID
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - EMPLOYEENAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - EMPSTATUS
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - EMPTYPE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - FAMILYNAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - FAMILYNAME_ENG
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - FAX
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - FIRSTNAME_ENG
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - FORPASSNO
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - GENDER
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - GNAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - GROUPWORKEDYEAR
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - HIREDDATE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - HOMEPHONE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - INSURETYPECODE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - INSURETYPENAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - INTEREST
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - ISBLACKLISTED
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - ISFOREIGNER
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - ISINVALIDDATE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - ISINVALIDEMP
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - LABOURCONDITION
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - LASTNAME_ENG
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - LEAVEWORKEYEAR
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - LNAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - MARITALSTATUS
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - MILITARYSERVED
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - MOBILEPHONE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - NDDNO
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - PARENTPATH
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - PASSNO
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - PCODE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - PNAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - POSGROUP
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - POSITIONID
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - POSTADDRESS
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - POSTYPE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - REGNO
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - REGNO_ENG
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - SICOUNTRYBIRTHNAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - SICOUNTRYNAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - SIDISTRICTBIRTHNAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - SIDISTRICTNAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - SIDIVISIONBIRTHNAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - SIDIVISIONNAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - SINATIONALITYNAME
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - SISOCIALORIGIN
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - STATUS
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - STATUSDATE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - TRAININGSPORT
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - WITHPICTURE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - WORKPHONE
+        metadata:
+          inclusion: available
+          selected: true
+      - breadcrumb:
+        - properties
+        - WORKPHONEEXT
+        metadata:
+          inclusion: available
+          selected: true
+      replication_method: FULL_TABLE
+      schema:
+        properties:
+          ADDR1:
+            type:
+            - string
+          ADDR2:
+            type:
+            - string
+          AGE:
+            type:
+            - number
+          BIRTHDATE:
+            format: date-time
+            type:
+            - string
+          BIRTHPLACE:
+            type:
+            - string
+          BLACKLISTEDDATE:
+            format: date-time
+            type:
+            - string
+          BLACKLISTREASON:
+            type:
+            - string
+          BLOODGROUP:
+            type:
+            - string
+          CODE:
+            type:
+            - string
+          COMPANYID:
+            type:
+            - string
+          COMPANYNAME:
+            type:
+            - string
+          COMPANYYEAR:
+            type:
+            - number
+          CONTACTNAME:
+            type:
+            - string
+          CONTACTNAME2:
+            type:
+            - string
+          CONTACTPHONE:
+            type:
+            - string
+          CONTACTPHONE2:
+            type:
+            - string
+          COUNTRYYEAR:
+            type:
+            - number
+          DEPID:
+            type:
+            - string
+          DNAME:
+            type:
+            - string
+          EMAIL:
+            type:
+            - string
+          EMAIL2:
+            type:
+            - string
+          EMDNO:
+            type:
+            - string
+          EMPID:
+            type:
+            - number
+          EMPLOYEENAME:
+            type:
+            - string
+          EMPSTATUS:
+            type:
+            - string
+          EMPTYPE:
+            type:
+            - string
+          FAMILYNAME:
+            type:
+            - string
+          FAMILYNAME_ENG:
+            type:
+            - string
+          FAX:
+            type:
+            - string
+          FIRSTNAME_ENG:
+            type:
+            - string
+          FORPASSNO:
+            type:
+            - string
+          GENDER:
+            type:
+            - string
+          GNAME:
+            type:
+            - string
+          GROUPWORKEDYEAR:
+            type:
+            - number
+          HIREDDATE:
+            type:
+            - string
+          HOMEPHONE:
+            type:
+            - string
+          INSURETYPECODE:
+            type:
+            - string
+          INSURETYPENAME:
+            type:
+            - string
+          INTEREST:
+            type:
+            - string
+          ISBLACKLISTED:
+            type:
+            - string
+          ISFOREIGNER:
+            type:
+            - string
+          ISINVALIDDATE:
+            format: date-time
+            type:
+            - string
+          ISINVALIDEMP:
+            type:
+            - string
+          LABOURCONDITION:
+            type:
+            - string
+          LASTNAME_ENG:
+            type:
+            - string
+          LEAVEWORKEYEAR:
+            type:
+            - number
+          LNAME:
+            type:
+            - string
+          MARITALSTATUS:
+            type:
+            - string
+          MILITARYSERVED:
+            type:
+            - string
+          MOBILEPHONE:
+            type:
+            - string
+          NDDNO:
+            type:
+            - string
+          PARENTPATH:
+            type:
+            - string
+          PASSNO:
+            type:
+            - string
+          PCODE:
+            type:
+            - string
+          PNAME:
+            type:
+            - string
+          POSGROUP:
+            type:
+            - string
+          POSITIONID:
+            type:
+            - number
+          POSTADDRESS:
+            type:
+            - string
+          POSTYPE:
+            type:
+            - string
+          REGNO:
+            type:
+            - string
+          REGNO_ENG:
+            type:
+            - string
+          SICOUNTRYBIRTHNAME:
+            type:
+            - string
+          SICOUNTRYNAME:
+            type:
+            - string
+          SIDISTRICTBIRTHNAME:
+            type:
+            - string
+          SIDISTRICTNAME:
+            type:
+            - string
+          SIDIVISIONBIRTHNAME:
+            type:
+            - string
+          SIDIVISIONNAME:
+            type:
+            - string
+          SINATIONALITYNAME:
+            type:
+            - string
+          SISOCIALORIGIN:
+            type:
+            - string
+          STATUS:
+            type:
+            - string
+          STATUSDATE:
+            format: date-time
+            type:
+            - string
+          TRAININGSPORT:
+            type:
+            - string
+          WITHPICTURE:
+            type:
+            - string
+          WORKPHONE:
+            type:
+            - string
+          WORKPHONEEXT:
+            type:
+            - string
+        type: object
+      stream: BI_HREMPLOYEE
+      tap_stream_id: BI_HREMPLOYEE
+      unique_conflict_method: UPDATE
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: nimble illusion
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: integration
+uuid: nimble_illusion
+variables_dir: /home/src/mage_data/apu_data_pipeline
+widgets: []
