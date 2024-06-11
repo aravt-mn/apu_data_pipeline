@@ -1,0 +1,17 @@
+profiles:
+  dwh_test_landingdb:
+    databases:
+      microsoft_sql_server:
+        host: 172.31.0.112
+        port: 1433
+        username: sa-dwh
+        password: "{{ mage_secret_var('dwh_test_sa_password') }}"
+        database: LandingDb
+  dwh_test_testdb:
+    databases:
+      microsoft_sql_server:
+        host: 172.31.0.112
+        port: 1433
+        username: sa-dwh
+        password: "{{ mage_secret_var('dwh_test_sa_password') }}"
+        database: TestDb
