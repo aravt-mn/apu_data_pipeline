@@ -1,5 +1,5 @@
-# Use the official Python image from the Docker Hub
-FROM python:3.9-slim
+# Extend the mageai/mageai image
+FROM mageai/mageai:latest
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -13,15 +13,6 @@ RUN apt-get update && \
     ACCEPT_EULA=Y apt-get install -y msodbcsql17 unixodbc-dev && \
     apt-get clean
 
-# Copy the requirements.txt file into the container at /app
-COPY requirements.txt /app/requirements.txt
-
-# Install any dependencies specified in requirements.txt
-RUN pip install --no-cache-dir -r /app/requirements.txt
-
-# Copy the rest of the working directory contents into the container at /app
-COPY . /app
-
 # Copy ODBC configuration files
 COPY odbcinst.ini /etc/odbcinst.ini
 COPY odbc.ini /etc/odbc.ini
@@ -30,4 +21,4 @@ COPY odbc.ini /etc/odbc.ini
 ENV PYTHONUNBUFFERED=1
 
 # Run the application
-CMD ["mage", "start", "apu_data_pipeline"]
+CMD ["mage", "start", "--project", "apu_data_pipeline"]
