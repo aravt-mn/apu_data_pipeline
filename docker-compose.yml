@@ -4,6 +4,8 @@ services:
     image: mageai/mageai:latest
     ports:
       - "6789:6789"
+    dns:
+      - 172.31.0.8
     volumes:
       - ./mage_data:/app/data
       - ./:/home/src/apu_data_pipeline
