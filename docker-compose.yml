@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  mageai:
+  apu_data_pipeline:
     image: mageai/mageai:latest
     ports:
       - "6789:6789"
@@ -11,12 +11,5 @@ services:
       - ./:/home/src/apu_data_pipeline
     environment:
       - USER_CODE_PATH=/home/src/apu_data_pipeline
-    command: ["mage", "start", "apu_data_pipeline"]
-    restart: always
-
-  apu_data_pipeline:
-    build: .
-    volumes:
-      - .:/app
-    command: ["mage", "start", "apu_data_pipeline"]
+    command: ["mage", "start", "--project", "apu_data_pipeline"]
     restart: always
