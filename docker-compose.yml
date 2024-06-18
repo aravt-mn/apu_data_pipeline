@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   apu_data_pipeline:
-    image: mageai/mageai:latest
+    build: .
     ports:
       - "6789:6789"
     dns:
