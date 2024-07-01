@@ -9,6 +9,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./apu_data_pipeline:/home/src/apu_data_pipeline  # Mount your project directory into the container
+      - ./io_config.yaml:/home/src/apu_data_pipeline/io_config.yaml # Mount io_config.yaml into the container
     environment:
       PYTHONPATH: "${PYTHONPATH}:/home/src:/home/src/apu_data_pipeline"
     command: /bin/sh -c "/app/run_app.sh"
