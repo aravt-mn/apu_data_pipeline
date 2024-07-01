@@ -2,6 +2,8 @@ version: '3.8'
 
 services:
   mageai:
+    ports:
+      - "6789:6789"
     build:
       context: .
       dockerfile: Dockerfile
