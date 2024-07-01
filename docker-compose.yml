@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  mageai:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./apu_data_pipeline:/home/src/apu_data_pipeline  # Mount your project directory into the container
+    environment:
+      PYTHONPATH: "${PYTHONPATH}:/home/src:/home/src/apu_data_pipeline"
+    command: /bin/sh -c "/app/run_app.sh"
