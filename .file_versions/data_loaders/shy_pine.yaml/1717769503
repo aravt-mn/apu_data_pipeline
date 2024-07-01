@@ -1,9 +1,0 @@
-config:
-  host: 172.31.0.133
-  port: "1521"
-  service: orcl
-  password: Pass1231
-  user: dwh
-  schema: HRMS_PROD
-  table: HRMS_PROD.BI_HREMPLOYEE
-source: oracledb

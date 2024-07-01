@@ -1,9 +1,0 @@
-config:
-  database: msdb
-  host: localhost
-  port: "1433"
-  username: sa-dwh
-  password: "{{ mage_secret_var('dwh_test_sa_password') }}"
-  authentication: null
-  schema: P
-destination: mssql

@@ -1,8 +1,0 @@
-sync_config:
-  access_token_secret_name: mage_git_access_token
-  auth_type: https
-  branch: main
-  email: aravt.mn@gmail.com
-  remote_repo_link: https://github.com/aravt-mn/apu_data_pipeline.git
-  repo_path: /home/src
-  username: aravt-mn

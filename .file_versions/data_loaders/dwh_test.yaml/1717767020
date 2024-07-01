@@ -1,9 +1,0 @@
-config:
-  database: LandingDb
-  host: 172.31.0.112
-  port: "1433"
-  username: sa-dw
-  password: password
-  authentication: null
-  schema: null
-source: mssql
