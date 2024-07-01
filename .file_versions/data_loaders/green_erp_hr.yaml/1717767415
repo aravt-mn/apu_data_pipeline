@@ -1,7 +1,0 @@
-config:
-  host: 172.31.0.133
-  port: "1521"
-  service: exported service name
-  password: Pass1231
-  user: dwh
-source: oracledb
