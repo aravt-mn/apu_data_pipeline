@@ -1,1 +1,6 @@
 project_uuid: 8ce3a565222441e983e09d75d261aa02
+features:
+  add_new_block_v2: true
+help_improve_mage:
+openai_api_key: ''
+pipelines:
