@@ -12,6 +12,5 @@ services:
       - ./io_config.yaml:/home/src/apu_data_pipeline/io_config.yaml # Mount io_config.yaml into the container
     environment:
       PYTHONPATH: "${PYTHONPATH}:/home/src:/home/src/apu_data_pipeline"
-      DATABASE_URL: "Server=172.31.0.112;Database=mage_db;User=mage_user;Password=Asuult123456;"
+      DATABASE_URL: "Server=172.31.0.112;Database=mage_db;User=mage_user;Password=Asuult12345;"
     command: /bin/sh -c "/app/run_app.sh"
-
