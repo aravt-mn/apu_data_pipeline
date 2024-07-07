@@ -3,6 +3,7 @@ version: '3.8'
 services:
   mageai:
     image: mageai/mageai:latest
+    container_name: MageAI
     command: mage start ${PROJECT_NAME}
     env_file:
       - dev.env
@@ -10,11 +11,21 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      USER_CODE_PATH: /home/src/${PROJECT_NAME}
+      TZ: Asia/Ulaanbaatar
+      PROJECT_NAME: apu_data_pipeline
+      MAGE_PROJECT_TYPE: standalone
+      USER_CODE_PATH: /home/src/apu_data_pipeline
+      PROJECT_PATH: /home/src/apu_data_pipeline
+      REQUIRE_USER_AUTHENTICATION: ${REQUIRE_USER_AUTHENTICATION}
+      OAUTH_CLIENT_ID: ${OAUTH_CLIENT_ID}
+      OAUTH_CLIENT_SECRET: ${OAUTH_CLIENT_SECRET}
+      OAUTH_REDIRECT_URI: ${OAUTH_REDIRECT_URI}
+      OAUTH_AUTHORITY: ${OAUTH_AUTHORITY}
+      OAUTH_SCOPES: ${OAUTH_SCOPES}
+      ACTIVE_DIRECTORY_ROLES_MAPPING: ${ACTIVE_DIRECTORY_ROLES_MAPPING}
     ports:
       - "6789:6789"
     volumes:
       - ./apu_data_pipeline:/home/src/apu_data_pipeline
       - ./io_config.yaml:/home/src/apu_data_pipeline/io_config.yaml
-      - ~/Documents/secrets/personal-gcp.json:/home/src/personal-gcp.json
     restart: on-failure:5
