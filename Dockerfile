@@ -16,7 +16,7 @@ COPY io_config.yaml ${USER_CODE_PATH}/io_config.yaml
 # Install custom Python libraries if requirements.txt exists
 RUN if [ -f ${USER_CODE_PATH}/requirements.txt ]; then pip3 install -r ${USER_CODE_PATH}/requirements.txt; fi
 
-# Install custom libraries within 3rd party libraries (e.g. DBT packages) if install_other_dependencies.py exists
+# Install custom libraries within 3rd party libraries (e.g., DBT packages) if install_other_dependencies.py exists
 RUN if [ -f /app/install_other_dependencies.py ]; then python3 /app/install_other_dependencies.py --path ${USER_CODE_PATH}; fi
 
 CMD ["/bin/sh", "-c", "/app/run_app.sh"]

@@ -2,15 +2,19 @@ version: '3.8'
 
 services:
   mageai:
-    ports:
-      - "6789:6789"
+    image: mageai/mageai:latest
+    command: mage start ${PROJECT_NAME}
+    env_file:
+      - dev.env
     build:
       context: .
       dockerfile: Dockerfile
-    volumes:
-      - ./apu_data_pipeline:/home/src/apu_data_pipeline  # Mount your project directory into the container
-      - ./io_config.yaml:/home/src/apu_data_pipeline/io_config.yaml # Mount io_config.yaml into the container
     environment:
-      PYTHONPATH: "${PYTHONPATH}:/home/src:/home/src/apu_data_pipeline"
-      DATABASE_URL: "Server=172.31.0.112;Database=mage_db;User=mage_user;Password=Asuult12345;"
-    command: /bin/sh -c "/app/run_app.sh"
+      USER_CODE_PATH: /home/src/${PROJECT_NAME}
+    ports:
+      - "6789:6789"
+    volumes:
+      - ./apu_data_pipeline:/home/src/apu_data_pipeline
+      - ./io_config.yaml:/home/src/apu_data_pipeline/io_config.yaml
+      - ~/Documents/secrets/personal-gcp.json:/home/src/personal-gcp.json
+    restart: on-failure:5
