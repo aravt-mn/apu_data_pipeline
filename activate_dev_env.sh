@@ -19,5 +19,5 @@ export OAUTH_CLIENT_ID=13494b53-4872-4637-b4d7-d0527adf3e56
 export OAUTH_CLIENT_SECRET=4fa876b8-6dc7-49e6-a43c-64fccc612117
 export OAUTH_REDIRECT_URI=http://dwh.apu.mn:6789/oauth
 export OAUTH_AUTHORITY=https://login.microsoftonline.com/eb9e7279-8b93-41e4-98b6-0974c2993cf5
-export OAUTH_SCOPES='email'
+export OAUTH_SCOPES='api://13494b53-4872-4637-b4d7-d0527adf3e56/access_as_user'
 export ACTIVE_DIRECTORY_ROLES_MAPPING='{"Mage.Edit": "Editor", "Mage.Admin": "Admin"}'
