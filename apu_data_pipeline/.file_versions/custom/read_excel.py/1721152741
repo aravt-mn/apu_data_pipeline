@@ -1,0 +1,24 @@
+import pandas as pd
+from sqlalchemy import create_engine
+
+# Path to the Excel file
+excel_file_path = 'path/to/your/excel/file.xlsx'
+
+# MSSQL connection details
+mssql_host = '172.31.0.112'
+mssql_db = 'TestDb'
+mssql_user = 'sa-dwh'
+mssql_password = '40v4A&WuP6$5'
+
+# Read the Excel file into a DataFrame
+df = pd.read_excel(excel_file_path, engine='openpyxl')
+
+# Create a connection to the MSSQL database
+connection_string = f'mssql+pyodbc://{mssql_user}:{mssql_password}@{mssql_host}/{mssql_db}?driver=ODBC+Driver+17+for+SQL+Server'
+engine = create_engine(connection_string)
+
+# Write the DataFrame to a SQL table
+table_name = 'your_table_name'
+df.to_sql(table_name, engine, if_exists='replace', index=False)
+
+print(f"Data from {excel_file_path} has been successfully written to {table_name} table in the {mssql_db} database.")

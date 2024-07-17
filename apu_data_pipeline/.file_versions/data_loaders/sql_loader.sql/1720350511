@@ -1,2 +1,3 @@
 -- Docs: https://docs.mage.ai/guides/sql-blocks
-select top 100 * from Python.BI_HREMPLOYEE
+
+SELECT TOP 100 * FROM Python.BI_HREMPLOYEE

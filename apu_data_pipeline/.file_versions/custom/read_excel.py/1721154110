@@ -1,0 +1,22 @@
+import pandas as pd
+from sqlalchemy import create_engine
+from mage_ai.data_preparation.shared.utils import get_connection
+
+# Path to the Excel file
+excel_file_path = r'\\fileserver\salesdata\SalesPlan\Archive\2024_04_Monthly_plan_20240709_092601.xlsx'
+
+# Read the Excel file into a DataFrame
+df = pd.read_excel(excel_file_path, engine='openpyxl')
+
+# Get MSSQL connection profile
+connection_profile = get_connection('dwh_TestDbManual')
+
+# Create a connection to the MSSQL database
+connection_string = f"mssql+pyodbc://{connection_profile['username']}:{connection_profile['password']}@{connection_profile['host']}:{connection_profile['port']}/{connection_profile['database']}?driver={connection_profile['driver']}"
+engine = create_engine(connection_string)
+
+# Write the DataFrame to a SQL table
+table_name = 'your_table_name'
+df.to_sql(table_name, engine, if_exists='replace', index=False)
+
+print(f"Data from {excel_file_path} has been successfully written to {table_name} table in the {connection_profile['database']} database.")

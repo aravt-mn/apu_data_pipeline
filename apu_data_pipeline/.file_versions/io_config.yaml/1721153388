@@ -8,7 +8,7 @@ default:
   MSSQL_USER: mage_user
   MSSQL_PASSWORD: Asuult12345
 
-dwh_LandingDb:
+dwh_landingdb:
   MSSQL_DATABASE: LandingDb
   MSSQL_SCHEMA: Python
   MSSQL_DRIVER: "ODBC Driver 18 for SQL Server"
@@ -25,11 +25,3 @@ dwh_TestDbManual:
   MSSQL_PORT: 1433
   MSSQL_USER: sa-dwh
   MSSQL_PASSWORD: 40v4A&WuP6$5
-
-greenerp_:
-  ORACLE_HOST: 172.31.0.133
-  ORACLE_PORT: 1521
-  ORACLE_SERVICE_NAME: ORCL
-  ORACLE_USER: ERP_WH
-  ORACLE_PASSWORD: wh_green
-  ORACLE_DRIVER: "oracle"
