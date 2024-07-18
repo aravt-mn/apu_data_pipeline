@@ -1,9 +1,0 @@
-config:
-  database: TestDb
-  host: 172.31.0.112
-  port: "1433"
-  username: root
-  password: password
-  authentication: null
-  schema: null
-destination: mssql

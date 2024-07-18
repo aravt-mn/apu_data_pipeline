@@ -1,5 +1,0 @@
--- Docs: https://docs.mage.ai/guides/sql-blocks
-sql_loader.sql
-
-
-select 1 as col1
