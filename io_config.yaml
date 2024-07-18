@@ -1,14 +1,6 @@
 version: 0.1.1
-default:
-  MSSQL_DATABASE: mage_db
-  MSSQL_SCHEMA: dbo
-  MSSQL_DRIVER: "ODBC Driver 18 for SQL Server"
-  MSSQL_HOST: 172.31.0.112
-  MSSQL_PORT: 1433
-  MSSQL_USER: mage_user
-  MSSQL_PASSWORD: Asuult12345
 
-dwh_LandingDb:
+mssql_dwh_LandingDb_Python:
   MSSQL_DATABASE: LandingDb
   MSSQL_SCHEMA: Python
   MSSQL_DRIVER: "ODBC Driver 18 for SQL Server"
@@ -17,9 +9,8 @@ dwh_LandingDb:
   MSSQL_USER: sa-dwh
   MSSQL_PASSWORD: 40v4A&WuP6$5
 
-<<<<<<< HEAD
-dwh_TestDbManual:
-  MSSQL_DATABASE: Test
+mssql_dwh_TestDb_Manual:
+  MSSQL_DATABASE: TestDb
   MSSQL_SCHEMA: Manual
   MSSQL_DRIVER: "ODBC Driver 18 for SQL Server"
   MSSQL_HOST: 172.31.0.112
@@ -27,9 +18,7 @@ dwh_TestDbManual:
   MSSQL_USER: sa-dwh
   MSSQL_PASSWORD: 40v4A&WuP6$5
 
-=======
->>>>>>> 108b33b4c5f7ebf0d3b23365644dcb68732f301f
-greenerp_:
+oracle_greenerp:
   ORACLE_HOST: 172.31.0.133
   ORACLE_PORT: 1521
   ORACLE_SERVICE_NAME: ORCL
