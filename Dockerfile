@@ -19,7 +19,7 @@ WORKDIR ${MAGE_CODE_PATH}
 
 COPY ${PROJECT_NAME} ${PROJECT_NAME}
 
-COPY io_config.yaml ${USER_CODE_PATH}/io_config.yaml
+COPY io_config.yaml /home/src/apu_data_pipeline/io_config.yaml
 
 # Install custom Python libraries if requirements.txt exists
 RUN if [ -f ${USER_CODE_PATH}/requirements.txt ]; then pip3 install -r ${USER_CODE_PATH}/requirements.txt; fi
