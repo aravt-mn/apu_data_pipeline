@@ -1,25 +1,23 @@
 FROM mageai/mageai:latest
 
-# Install Oracle Instant Client
-# RUN apt-get update && apt-get install -y libaio1 wget unzip && \
-#     wget https://download.oracle.com/otn_software/linux/instantclient/191000/instantclient-basic-linux.x64-19.10.0.0.0dbru.zip && \
-#     unzip -o instantclient-basic-linux.x64-19.10.0.0.0dbru.zip -d /usr/lib/oracle && \
-#     rm -f instantclient-basic-linux.x64-19.10.0.0.0dbru.zip && \
-#     echo /usr/lib/oracle/instantclient_19_10 > /etc/ld.so.conf.d/oracle-instantclient.conf && \
-#     ldconfig
-
+# Set default values for ARGs in case they are not provided
 ARG PROJECT_NAME=apu_data_pipeline
 ARG MAGE_CODE_PATH=/home/src
 ARG USER_CODE_PATH=${MAGE_CODE_PATH}/${PROJECT_NAME}
 
+# Set ENV based on ARG values
 ENV PYTHONPATH="${PYTHONPATH}:${MAGE_CODE_PATH}:${USER_CODE_PATH}"
 ENV USER_CODE_PATH=${USER_CODE_PATH}
 
+# Set the working directory inside the container
 WORKDIR ${MAGE_CODE_PATH}
 
+# Copy the project directory into the container
 COPY ${PROJECT_NAME} ${PROJECT_NAME}
 
-COPY io_config.yaml /home/src/apu_data_pipeline/io_config.yaml
+# Ensure io_config.yaml is present in the context directory and copy it
+# Adjust the source path if io_config.yaml is not directly in the context root
+COPY io_config.yaml ${USER_CODE_PATH}/io_config.yaml
 
 # Install custom Python libraries if requirements.txt exists
 RUN if [ -f ${USER_CODE_PATH}/requirements.txt ]; then pip3 install -r ${USER_CODE_PATH}/requirements.txt; fi
