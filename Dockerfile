@@ -1,12 +1,12 @@
 FROM mageai/mageai:latest
 
 # Install Oracle Instant Client
-RUN apt-get update && apt-get install -y libaio1 wget unzip && \
-    wget https://download.oracle.com/otn_software/linux/instantclient/191000/instantclient-basic-linux.x64-19.10.0.0.0dbru.zip && \
-    unzip -o instantclient-basic-linux.x64-19.10.0.0.0dbru.zip -d /usr/lib/oracle && \
-    rm -f instantclient-basic-linux.x64-19.10.0.0.0dbru.zip && \
-    echo /usr/lib/oracle/instantclient_19_10 > /etc/ld.so.conf.d/oracle-instantclient.conf && \
-    ldconfig
+# RUN apt-get update && apt-get install -y libaio1 wget unzip && \
+#     wget https://download.oracle.com/otn_software/linux/instantclient/191000/instantclient-basic-linux.x64-19.10.0.0.0dbru.zip && \
+#     unzip -o instantclient-basic-linux.x64-19.10.0.0.0dbru.zip -d /usr/lib/oracle && \
+#     rm -f instantclient-basic-linux.x64-19.10.0.0.0dbru.zip && \
+#     echo /usr/lib/oracle/instantclient_19_10 > /etc/ld.so.conf.d/oracle-instantclient.conf && \
+#     ldconfig
 
 ARG PROJECT_NAME=apu_data_pipeline
 ARG MAGE_CODE_PATH=/home/src
