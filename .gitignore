@@ -1,6 +1,8 @@
 # Configuration files with sensitive information
 # io_config.yaml
 # dev.env
+apu_data_pipeline/.file_versions/
+apu_data_pipeline/.ssh_tunnel
 
 # Python-specific and virtual environments
 __pycache__/
