@@ -1,33 +1,17 @@
-version: '3.8'
-
+version: '3'
 services:
   mageai:
     image: mageai/mageai:latest
-    container_name: MageAI
-    command: mage start ${PROJECT_NAME}
-    
     build:
       context: .
-      dockerfile: Dockerfile
-    env_file:
-      - dev.env
-    # environment:
-    #   TZ: Asia/Ulaanbaatar
-    #   PROJECT_NAME: apu_data_pipeline
-    #   MAGE_PROJECT_TYPE: standalone
-    #   USER_CODE_PATH: /home/src/${PROJECT_NAME}
-    #   ENV: dev
-    #   PROJECT_PATH: /home/src/${PROJECT_NAME}
-      # REQUIRE_USER_AUTHENTICATION: ${REQUIRE_USER_AUTHENTICATION}
-      # OAUTH_CLIENT_ID: ${OAUTH_CLIENT_ID}
-      # OAUTH_CLIENT_SECRET: ${OAUTH_CLIENT_SECRET}
-      # OAUTH_REDIRECT_URI: ${OAUTH_REDIRECT_URI}
-      # OAUTH_AUTHORITY: ${OAUTH_AUTHORITY}
-      # OAUTH_SCOPES: ${OAUTH_SCOPES}
-      # ACTIVE_DIRECTORY_ROLES_MAPPING: ${ACTIVE_DIRECTORY_ROLES_MAPPING}
+    command: mage start apu_data_pipeline
+    environment:
+      - ENV=dev
     ports:
-      - "6789:6789"
+      - 6789:6789
     volumes:
-      - .:/home/src/${PROJECT_NAME}
+      - .:/home/src
       # - .:/home/src/apu_data_pipeline/io_config.yaml
     restart: on-failure:5
+    stdin_open: true #used for interactive debugging
+    tty: true #u sed for interactive debugging
