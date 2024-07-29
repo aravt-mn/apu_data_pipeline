@@ -25,6 +25,10 @@ RUN pip install cx_Oracle
 # Copy project files
 COPY ${PROJECT_NAME} ${PROJECT_NAME}
 
+# Copy requirements.txt and install dependencies
+COPY requirements.txt /app/requirements.txt
+RUN pip install -r /app/requirements.txt
+
 ENV USER_CODE_PATH=${USER_CODE_PATH}
 
 # Set the command to run the application
