@@ -15,10 +15,9 @@ RUN apt-get update && \
     wget https://download.oracle.com/otn_software/linux/instantclient/2350000/instantclient-basic-linux.x64-23.5.0.24.07.zip && \
     unzip -o instantclient-basic-linux.x64-23.5.0.24.07.zip -d /opt/oracle && \
     rm instantclient-basic-linux.x64-23.5.0.24.07.zip && \
-    ln -s /opt/oracle/instantclient_23_5 /opt/oracle/instantclient && \
+    if [ ! -L /opt/oracle/instantclient ]; then ln -s /opt/oracle/instantclient_23_5 /opt/oracle/instantclient; fi && \
     echo /opt/oracle/instantclient > /etc/ld.so.conf.d/oracle-instantclient.conf && \
     ldconfig
-
 # Copy project files
 COPY ${PROJECT_NAME} ${PROJECT_NAME}
 
