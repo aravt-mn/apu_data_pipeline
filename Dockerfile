@@ -18,15 +18,14 @@ RUN apt-get update && \
     if [ ! -L /opt/oracle/instantclient ]; then ln -s /opt/oracle/instantclient_23_5 /opt/oracle/instantclient; fi && \
     echo /opt/oracle/instantclient > /etc/ld.so.conf.d/oracle-instantclient.conf && \
     ldconfig
-# Copy project files
-COPY ${PROJECT_NAME} ${PROJECT_NAME}
+# Verify mage-ai installation
+RUN pip show mage-ai
 
-# Copy requirements.txt and install dependencies
-# COPY requirements.txt /app/requirements.txt
-# RUN pip install --upgrade pip && \
-#     pip install -r /app/requirements.txt --verbose
-
+# Set environment variables
 ENV USER_CODE_PATH=${USER_CODE_PATH}
+
+# Set the command to run the application
+CMD ["/bin/sh", "-c", "/app/run_app.sh"]
 
 # Set the command to run the application
 CMD ["/bin/sh", "-c", "/app/run_app.sh"]
