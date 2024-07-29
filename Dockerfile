@@ -19,9 +19,6 @@ RUN apt-get update && \
     echo /opt/oracle/instantclient > /etc/ld.so.conf.d/oracle-instantclient.conf && \
     ldconfig
 
-# Install cx_Oracle
-RUN pip install cx_Oracle
-
 # Copy project files
 COPY ${PROJECT_NAME} ${PROJECT_NAME}
 
