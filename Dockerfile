@@ -13,7 +13,7 @@ WORKDIR ${MAGE_CODE_PATH}
 RUN apt-get update && \
     apt-get install -y libaio1 wget unzip && \
     wget https://download.oracle.com/otn_software/linux/instantclient/2350000/instantclient-basic-linux.x64-23.5.0.24.07.zip && \
-    unzip instantclient-basic-linux.x64-23.5.0.24.07.zip -d /opt/oracle && \
+    unzip -o instantclient-basic-linux.x64-23.5.0.24.07.zip -d /opt/oracle && \
     rm instantclient-basic-linux.x64-23.5.0.24.07.zip && \
     ln -s /opt/oracle/instantclient_23_5 /opt/oracle/instantclient && \
     echo /opt/oracle/instantclient > /etc/ld.so.conf.d/oracle-instantclient.conf && \
