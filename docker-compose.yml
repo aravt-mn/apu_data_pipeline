@@ -28,6 +28,6 @@ services:
     ports:
       - "6789:6789"
     volumes:
-      - .:/home/src/apu_data_pipeline
+      - .:/home/src/${PROJECT_NAME}
       # - .:/home/src/apu_data_pipeline/io_config.yaml
     restart: on-failure:5
