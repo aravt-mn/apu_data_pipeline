@@ -6,26 +6,26 @@ services:
     container_name: MageAI
     command: mage start ${PROJECT_NAME}
     env_file:
-      - dev.env
+      - .env
     build:
       context: .
-      dockerfile: Dockerfile
     environment:
       TZ: Asia/Ulaanbaatar
       PROJECT_NAME: apu_data_pipeline
       MAGE_PROJECT_TYPE: standalone
-      USER_CODE_PATH: /home/src/apu_data_pipeline
-      PROJECT_PATH: /home/src/apu_data_pipeline
-      REQUIRE_USER_AUTHENTICATION: ${REQUIRE_USER_AUTHENTICATION}
-      OAUTH_CLIENT_ID: ${OAUTH_CLIENT_ID}
-      OAUTH_CLIENT_SECRET: ${OAUTH_CLIENT_SECRET}
-      OAUTH_REDIRECT_URI: ${OAUTH_REDIRECT_URI}
-      OAUTH_AUTHORITY: ${OAUTH_AUTHORITY}
-      OAUTH_SCOPES: ${OAUTH_SCOPES}
-      ACTIVE_DIRECTORY_ROLES_MAPPING: ${ACTIVE_DIRECTORY_ROLES_MAPPING}
+      USER_CODE_PATH: /home/src/${PROJECT_NAME}
+      ENV: dev
+      PROJECT_PATH: /home/src/${PROJECT_NAME}
+      # REQUIRE_USER_AUTHENTICATION: ${REQUIRE_USER_AUTHENTICATION}
+      # OAUTH_CLIENT_ID: ${OAUTH_CLIENT_ID}
+      # OAUTH_CLIENT_SECRET: ${OAUTH_CLIENT_SECRET}
+      # OAUTH_REDIRECT_URI: ${OAUTH_REDIRECT_URI}
+      # OAUTH_AUTHORITY: ${OAUTH_AUTHORITY}
+      # OAUTH_SCOPES: ${OAUTH_SCOPES}
+      # ACTIVE_DIRECTORY_ROLES_MAPPING: ${ACTIVE_DIRECTORY_ROLES_MAPPING}
     ports:
       - "6789:6789"
     volumes:
-      - ./apu_data_pipeline:/home/src/apu_data_pipeline
+      - ./${PROJECT_NAME}:/home/src/${PROJECT_NAME}
       - ./io_config.yaml:/home/src/apu_data_pipeline/io_config.yaml
     restart: on-failure:5
