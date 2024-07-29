@@ -11,7 +11,7 @@ ENV PYTHONPATH="${PYTHONPATH}:${MAGE_CODE_PATH}"
 WORKDIR ${MAGE_CODE_PATH}
 
 # Replace [project_name] with the name of your project (e.g. demo_project)
-COPY ${PROJECT_NAME} ${PROJECT_NAME}
+COPY ../apu_data_pipeline ${PROJECT_NAME}
 
 # Set the USER_CODE_PATH variable to the path of user project.
 # The project path needs to contain project name.
