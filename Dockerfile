@@ -27,7 +27,8 @@ COPY ${PROJECT_NAME} ${PROJECT_NAME}
 
 # Copy requirements.txt and install dependencies
 COPY requirements.txt /app/requirements.txt
-RUN pip install -r /app/requirements.txt
+RUN pip install --upgrade pip && \
+    pip install -r /app/requirements.txt --verbose
 
 ENV USER_CODE_PATH=${USER_CODE_PATH}
 
