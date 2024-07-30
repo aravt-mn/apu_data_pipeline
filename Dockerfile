@@ -9,6 +9,8 @@ ENV PYTHONPATH="${PYTHONPATH}:${MAGE_CODE_PATH}"
 # Set the working directory
 WORKDIR ${MAGE_CODE_PATH}
 
+RUN pip install --upgrade mage-ai
+
 # Install Oracle Instant Client
 # RUN apt-get update && \
 #     apt-get install -y libaio1 wget unzip && \
