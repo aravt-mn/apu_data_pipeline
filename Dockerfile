@@ -26,6 +26,3 @@ ENV USER_CODE_PATH=${USER_CODE_PATH}
 
 # Set the command to run the application
 CMD ["/bin/sh", "-c", "/app/run_app.sh"]
-
-# Set the command to run the application
-CMD ["/bin/sh", "-c", "/app/run_app.sh"]
