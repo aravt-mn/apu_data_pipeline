@@ -2,6 +2,8 @@ FROM mageai/mageai:latest
 
 RUN apt-get update && apt-get install -y libssl1.1
 
+RUN apt-get install -y unixodbc-dev msodbcsql17
+
 ARG PROJECT_NAME
 
 ENV PROJECT_NAME=${PROJECT_NAME}
