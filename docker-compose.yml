@@ -8,6 +8,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        PROJECT_NAME: ${PROJECT_NAME}
     environment:
       USER_CODE_PATH: /home/src/${PROJECT_NAME}
       MSSQL_DBNAME: ${MSSQL_DBNAME}
@@ -16,7 +18,7 @@ services:
       MSSQL_HOST: ${MSSQL_HOST}
       MSSQL_PORT: ${MSSQL_PORT}
     ports:
-      - 6789:6789
+      - "6789:6789"
     volumes:
       - .:/home/src/
     restart: on-failure:5
