@@ -1,7 +1,7 @@
 FROM mageai/mageai:latest
 
 # Install necessary dependencies
-RUN apt-get update && apt-get install -y libssl1.1 unixodbc-dev msodbcsql17
+RUN apt-get update && apt-get install -y libssl-dev unixodbc-dev msodbcsql17
 
 # Install Mage AI CLI
 RUN pip3 install mage-ai
