@@ -2,7 +2,7 @@ FROM mageai/mageai:latest
 
 # Install necessary dependencies
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
+    ACCEPT_EULA=Y apt-get install -y --no-install-recommends \
     libssl-dev \
     unixodbc-dev \
     msodbcsql17 && \
