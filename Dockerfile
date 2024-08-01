@@ -16,6 +16,9 @@ RUN pip3 install mage-ai
 ARG PROJECT_NAME
 ENV PROJECT_NAME=${PROJECT_NAME}
 
+# Set the database connection URL environment variable
+ENV MAGE_DATABASE_CONNECTION_URL="mssql+pyodbc://?odbc_connect=DRIVER={ODBC Driver 18 for SQL Server};SERVER=172.31.0.133;DATABASE=mage_db;UID=mage_user;PWD=Asuult12345;ENCRYPT=yes;TrustServerCertificate=yes;"
+
 # Copy requirements file and install Python dependencies
 COPY requirements.txt /home/src/requirements.txt
 RUN pip3 install -r /home/src/requirements.txt
