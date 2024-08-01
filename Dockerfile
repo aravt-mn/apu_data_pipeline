@@ -1,7 +1,9 @@
 FROM mageai/mageai:latest
 
-ARG USER_CODE_PATH=/home/src/${PROJECT_NAME}
+ARG PROJECT_NAME
 
-COPY requirements.txt ${USER_CODE_PATH}requirements.txt 
+ENV PROJECT_NAME=${PROJECT_NAME}
 
-RUN pip3 install -r ${USER_CODE_PATH}requirements.txt
+COPY requirements.txt /home/src/requirements.txt
+
+RUN pip3 install -r /home/src/requirements.txt
