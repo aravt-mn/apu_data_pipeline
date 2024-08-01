@@ -1,16 +1,23 @@
 version: '3'
 services:
-  server:
+  mage:
     image: mageai/mageai:latest
+    command: mage start ${PROJECT_NAME}
+    env_file:
+      - .env
     build:
       context: .
-    command: mage start apu_data_pipeline
+      dockerfile: Dockerfile
     environment:
-      - ENV=dev
+      USER_CODE_PATH: /home/src/${PROJECT_NAME}
+      MSSQL_DBNAME: ${MSSQL_DBNAME}
+      MSSQL_USER: ${MSSQL_USER}
+      MSSQL_PASSWORD: ${MSSQL_PASSWORD}
+      MSSQL_HOST: ${MSSQL_HOST}
+      MSSQL_PORT: ${MSSQL_PORT}
     ports:
       - 6789:6789
     volumes:
-      - .:/home/src
+      - .:/home/src/
+      - ~/Documents/secrets/personal-gcp.json:/home/src/personal-gcp.json
     restart: on-failure:5
-    stdin_open: true # used for interactive debugging
-    tty: true # used for interactive debugging
