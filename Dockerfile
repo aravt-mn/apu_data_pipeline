@@ -36,4 +36,4 @@ WORKDIR /home/src/${PROJECT_NAME}
 COPY . /home/src/${PROJECT_NAME}
 
 # Run the initialization command
-CMD ["bash", "-c", "mage migrate && mage start ${PROJECT_NAME}"]
+CMD ["bash", "-c", "mage start ${PROJECT_NAME}"]
