@@ -26,14 +26,14 @@ ENCRYPT=yes;\
 TrustServerCertificate=yes;"
 
 # Copy requirements file and install Python dependencies
-COPY requirements.txt /home/src/requirements.txt
-RUN pip3 install -r /home/src/requirements.txt
+COPY requirements.txt /home/src/${PROJECT_NAME}/requirements.txt
+RUN pip3 install -r /home/src/${PROJECT_NAME}/requirements.txt
 
 # Set the working directory
-WORKDIR /home/src
+WORKDIR /home/src/${PROJECT_NAME}
 
 # Copy the project files
-COPY . .
+COPY . /home/src/${PROJECT_NAME}
 
 # Run the initialization command
 CMD ["bash", "-c", "mage migrate && mage start ${PROJECT_NAME}"]
