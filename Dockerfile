@@ -37,4 +37,4 @@ WORKDIR /home/src/${PROJECT_NAME}
 COPY . /home/src/${PROJECT_NAME}
 
 # Run the initialization command
-CMD ["bash", "-c", "if [ ! -d /home/src/${PROJECT_NAME}/.mage ]; then mage init /home/src/${PROJECT_NAME}; fi && mage start ${PROJECT_NAME}"]
+CMD ["bash", "-c", "if [ ! -d /home/src/${PROJECT_NAME}/.mage ]; then echo '.mage directory does not exist, initializing...'; mage init /home/src/${PROJECT_NAME}; else echo '.mage directory exists, skipping initialization'; fi && mage start ${PROJECT_NAME}"]
