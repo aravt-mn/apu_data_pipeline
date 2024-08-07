@@ -1,7 +1,7 @@
 FROM mageai/mageai:latest
 
 # Install necessary dependencies
-RUN apt-get update --no-cache && \
+RUN apt-get update && \
     ACCEPT_EULA=Y apt-get install -y --no-install-recommends \
     libssl-dev \
     unixodbc-dev \
