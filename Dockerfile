@@ -18,12 +18,13 @@ ENV PROJECT_NAME=${PROJECT_NAME}
 
 # Set the database connection URL environment variable
 ENV MAGE_DATABASE_CONNECTION_URL="mssql+pyodbc://?odbc_connect=DRIVER={ODBC Driver 18 for SQL Server};\
-SERVER=172.31.0.133;\
+SERVER=172.31.0.112;\
 DATABASE=mage_db;\
 UID=mage_user;\
 PWD=Asuult12345;\
 ENCRYPT=yes;\
-TrustServerCertificate=yes;"
+TrustServerCertificate=yes;\
+Connection Timeout=30;"
 
 # Copy requirements file and install Python dependencies
 COPY requirements.txt /home/src/${PROJECT_NAME}/requirements.txt
