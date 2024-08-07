@@ -13,8 +13,14 @@ RUN apt-get update && \
 RUN pip3 install mage-ai
 
 # Set project name argument and environment variable
-ARG PROJECT_NAME
-ENV PROJECT_NAME=${PROJECT_NAME}
+ARG PROJECT_NAME=default_repo
+ARG MAGE_CODE_PATH=/home/src
+ARG USER_CODE_PATH=${MAGE_CODE_PATH}/${PROJECT_NAME}
+
+# Set the MAGE_CODE_PATH variable to the path of the Mage code.
+ENV PYTHONPATH="${PYTHONPATH}:${MAGE_CODE_PATH}"
+
+WORKDIR ${MAGE_CODE_PATH}
 
 # Set the database connection URL environment variable
 ENV MAGE_DATABASE_CONNECTION_URL="mssql+pyodbc://?odbc_connect=DRIVER={ODBC Driver 18 for SQL Server};\
@@ -26,15 +32,19 @@ ENCRYPT=yes;\
 TrustServerCertificate=yes;\
 Connection Timeout=30;"
 
-# Copy requirements file and install Python dependencies
-COPY requirements.txt /home/src/${PROJECT_NAME}/requirements.txt
-RUN pip3 install -r /home/src/${PROJECT_NAME}/requirements.txt
-
-# Set the working directory
-WORKDIR /home/src/${PROJECT_NAME}
-
 # Copy the project files
-COPY . /home/src/${PROJECT_NAME}
+COPY ${PROJECT_NAME} ${PROJECT_NAME}
+
+# Set the USER_CODE_PATH variable to the path of user project.
+ENV USER_CODE_PATH=${USER_CODE_PATH}
+
+# Install custom Python libraries if requirements.txt exists
+RUN if [ -f ${USER_CODE_PATH}/requirements.txt ]; then pip3 install -r ${USER_CODE_PATH}/requirements.txt; fi
+
+# Install custom libraries within 3rd party libraries (e.g. DBT packages) if install_other_dependencies.py exists
+RUN if [ -f /app/install_other_dependencies.py ]; then python3 /app/install_other_dependencies.py --path ${USER_CODE_PATH}; fi
+
+ENV PYTHONPATH="${PYTHONPATH}:${MAGE_CODE_PATH}"
 
 # Run the initialization command
-CMD ["bash", "-c", "mage start ${PROJECT_NAME}"]
+CMD ["bash", "-c", "if [ ! -f ${USER_CODE_PATH}/metadata.yaml ]; then mage init ${USER_CODE_PATH}; fi && python ${USER_CODE_PATH}/initialize_schema.py && mage start ${PROJECT_NAME}"]
