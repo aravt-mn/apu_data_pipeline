@@ -47,4 +47,4 @@ RUN if [ -f /app/install_other_dependencies.py ]; then python3 /app/install_othe
 ENV PYTHONPATH="${PYTHONPATH}:${MAGE_CODE_PATH}"
 
 # Run the initialization command
-CMD ["bash", "-c", "if [ ! -d ${USER_CODE_PATH} ]; then mage init ${USER_CODE_PATH}; fi && python ${USER_CODE_PATH}/initialize_schema.py && mage start ${PROJECT_NAME}"]
+CMD ["bash", "-c", "if [ ! -d ${USER_CODE_PATH} ]; then mage init ${USER_CODE_PATH}; fi && mage start ${PROJECT_NAME}"]
