@@ -37,4 +37,4 @@ WORKDIR /home/src/${PROJECT_NAME}
 COPY . /home/src/${PROJECT_NAME}
 
 # Run the initialization command
-CMD ["bash", "-c", "if [mage start ${PROJECT_NAME}"]
+CMD ["bash", "-c", "mage start ${PROJECT_NAME}"]
