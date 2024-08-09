@@ -1,0 +1,7 @@
+config:
+  host: 172.31.0.133
+  port: "1521"
+  service: orcl
+  password: password
+  user: user_name
+source: oracledb

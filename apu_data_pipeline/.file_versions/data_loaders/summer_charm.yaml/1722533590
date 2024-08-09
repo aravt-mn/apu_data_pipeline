@@ -1,0 +1,10 @@
+config:
+  database: msdb
+  host: localhost
+  port: "1433"
+  username: root
+  password: password
+  authentication: null
+  schema: null
+source: mssql
+catalog: {}
