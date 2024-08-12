@@ -9,9 +9,6 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Install Mage AI CLI
-RUN pip3 install mage-ai
-
 # Set project name argument and environment variable
 ARG PROJECT_NAME=default_repo
 ARG MAGE_CODE_PATH=/home/src
